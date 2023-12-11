@@ -4,7 +4,7 @@
  *
  * Return: 0
  */
-int main()
+/*int main()
 {
 	char *entry;
 
@@ -14,6 +14,22 @@ int main()
 	}
 
 	free(entry);
+	return (0);
+}*/
+
+int main()
+{
+	char *line = NULL;
+	size_t len = 0;
+	ssize_t read;
+
+	printf("$ ");
+	while ((read = _get_input(&line, &len, stdin)) != -1)
+	{
+		printf("%s\n", line);
+		printf("$ ");
+	}
+	free(line);
 	return (0);
 }
 

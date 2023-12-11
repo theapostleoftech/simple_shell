@@ -14,7 +14,8 @@
 #define SHELL_PROMPT "$> "
 
 
-char *get_input(void);
+/*char *get_input(void);*/
+ssize_t _get_input(char **lineptr, size_t *n, FILE *stream);
 
 
 
