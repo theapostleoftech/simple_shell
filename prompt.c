@@ -12,6 +12,8 @@ char *get_input(void)
 
 	write(1, SHELL_PROMPT, strlen(SHELL_PROMPT));
 
+	n = 0;
+	
 	while (read(0, &c, 1) > 0 && c != '\n' && n < B_SIZE - 1)
 	{
 		buff[n++] = c;
@@ -30,8 +32,8 @@ char *get_input(void)
  *
  * Return: no of char read
  */
-ssize_t _get_input(char **lineptr, size_t *n, FILE *stream)
+/**ssize_t _get_input(char **lineptr, size_t *n, FILE *stream)
 {
 	static 
-}
+}*/
 
