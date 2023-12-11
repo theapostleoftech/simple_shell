@@ -4,7 +4,7 @@
  *
  * Return: 0
  */
-/*int main()
+int main()
 {
 	char *entry;
 
@@ -15,9 +15,9 @@
 
 	free(entry);
 	return (0);
-}*/
+}
 
-int main()
+/*int main()
 {
 	char *line = NULL;
 	size_t len = 0;
@@ -31,5 +31,5 @@ int main()
 	}
 	free(line);
 	return (0);
-}
+}*/
 

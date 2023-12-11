@@ -4,7 +4,7 @@
  *
  * Return: the number of char read
  */
-/*char *get_input(void)
+char *get_input(void)
 {
 	static char buff[B_SIZE];
 	char c;
@@ -21,7 +21,7 @@
 
 	return (buff);
 
-}*/
+}
 
 /**
  * _get_input - reads form a steam
@@ -30,7 +30,7 @@
  * @stream: ..
  *
  * Return: no of char read
- */
+ *
 ssize_t _get_input(char **lineptr, size_t *n, FILE *stream)
 {
 	static char buff[B_SIZE];
@@ -69,5 +69,5 @@ ssize_t _get_input(char **lineptr, size_t *n, FILE *stream)
 
 	return *n;
 
-}
+}*/
 
