@@ -28,16 +28,14 @@ void cmdline_arguments(int argc, char *argv[])
 			line = my_getline();
 			if (line == NULL)
 			{
-				free(line);
 				continue;
 			}
 			execute_command(line, path_list);
 			free(line);
 		}
 	}
+	free(path_list);
 }
-
-
 
 /**
 * main - main function

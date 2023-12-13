@@ -8,14 +8,28 @@
  */
 void execute_command(char *line, pathlist *path_list)
 {
-	char **argv = string_splitter(line, " ");
+	char **argv;
+	char *tkn = string_splitter(line, " ");
+	int i = 0;
 
-	if (argv == NULL || argv[0] == NULL)
+	argv = malloc(sizeof(char *));
+
+	if (argv == NULL)
 	{
 		fprintf(stderr, "Error: parsing command error\n");
-		free(argv);
+		free_argv(argv);
 		return;
 	}
+
+	while (tkn != NULL)
+	{
+		argv[i] = strdup(tkn);
+		i++;
+		argv = realloc(argv, (i + 1) * sizeof(char *));
+		tkn = string_splitter(NULL, " ");
+	}
+
+	argv[i] = NULL;
 
 	if (_strcompare(argv[0], "env") == 0 || _strcompare(argv[0], "exit") == 0)
 	{
@@ -25,7 +39,7 @@ void execute_command(char *line, pathlist *path_list)
 	{
 		call_forktoexecve(argv, path_list);
 	}
-	free(argv);
+	free_argv(argv);
 }
 
 /**
@@ -97,5 +111,27 @@ void call_builtinstoexecve(char **argv)
 			sh_exit(NULL);
 		}
 	}
+}
+
+
+/**
+ * free_argv - free memory allotment of argector
+ * @argv: argument vectot
+ *
+ * Return: void
+ */
+void free_argv(char **argv)
+{
+	size_t i = 0;
+
+	if (argv == NULL)
+		return;
+
+	while (argv[i] != NULL)
+	{
+		free(argv[i]);
+		i++;
+	}
+	free(argv);
 }
 

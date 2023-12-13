@@ -32,7 +32,7 @@ void execute_command(char *line, pathlist *path_list);
 void call_forktoexecve(char **argv, pathlist *path_list);
 void call_builtinstoexecve(char **argv);
 char *my_getline(void);
-char **string_splitter(char *string, const char *separator);
+char *string_splitter(char *string, const char *separator);
 void cmdline_arguments(int argc, char *argv[]);
 char *search_path(pathlist *list, const char *ord);
 void free_path(pathlist *list);
@@ -44,5 +44,8 @@ int sh_setenv(char *name, char *value, int overwrite);
 
 int _atoint(char *string);
 int _strcompare(const char *s1, const char *s2);
+void free_argv(char **argv);
+void free_path(pathlist *path_list);
+size_t _separator(char a, const char *string);
 
 #endif

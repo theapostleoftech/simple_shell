@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /**
  * create_path - create path list
  *
@@ -7,21 +8,30 @@
 pathlist *create_path()
 {
 	char *path = getenv("PATH");
-	char **ptr = string_splitter(path, ":");
+	char *tkn;
 	pathlist *list = malloc(sizeof(pathlist));
 
+	if (list == NULL)
+		return (NULL);
 	list->paths = NULL;
 	list->num = 0;
-	while (ptr != NULL && *ptr != NULL)
+	tkn = string_splitter(path, ":");
+
+	while (tkn != NULL)
 	{
 		list->paths = realloc(list->paths, sizeof(char *) * (list->num + 1));
-		list->paths[list->num] = strdup(*ptr);
+		if (list->paths == NULL)
+		{
+			free(list);
+			return (NULL);
+		}
+		list->paths[list->num] = tkn;
 		list->num++;
-		ptr = string_splitter(NULL, ":");
+		tkn = string_splitter(NULL, ":");
 	}
-	free(ptr);
 	return (list);
 }
+
 
 /**
  * free_path - free memory of path
