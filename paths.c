@@ -76,10 +76,14 @@ char *search_path(pathlist *list, const char *ord)
 
 	for (p = 0; p < list->num; p++)
 	{
+		fprintf(stderr, "paths %s\n", list->paths[p]);
 		if (snprintf(realpath, buffer_sz, "%s/%s", list->paths[p], ord) >= 0)
 		{
 			if (access(realpath, F_OK) == 0 && access(realpath, X_OK) == 0)
+			{
+				fprintf(stderr, "found: %s\n", realpath);
 				return (realpath);
+			}
 		}
 		else
 		{
