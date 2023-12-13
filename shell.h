@@ -1,8 +1,3 @@
-
-#include <stdio.h>
-#include <stdlib.h>
-<<<<<<< HEAD
-=======
 #include <unistd.h>
 #include <string.h>
 #include <sys/types.h>
@@ -35,7 +30,5 @@ int sh_setenv(char *name, char *value, int overwrite);
 
 int _atoint(char *string);
 int _strcompare(const char *s1, const char *s2);
-
->>>>>>> 4a80745963db0a7ff882c7b5323f88da06ba6a4e
 
 #endif
