@@ -48,6 +48,7 @@ void cmdline_arguments(int argc, char *argv[])
 int main(int argc, char *argv[])
 {
 	cmdline_arguments(argc, argv);
+
 	return (0);
 }
 
