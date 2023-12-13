@@ -12,7 +12,7 @@ pathlist *create_path()
 
 	list->paths = NULL;
 	list->num = 0;
-	while (*ptr != NULL)
+	while (ptr != NULL && *ptr != NULL)
 	{
 		list->paths = realloc(list->paths, sizeof(char *) * (list->num + 1));
 		list->paths[list->num] = strdup(*ptr);

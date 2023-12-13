@@ -8,18 +8,19 @@
  */
 void cmdline_arguments(int argc, char *argv[])
 {
+	pathlist *path_list = create_path();
+	char *line;
 	int i;
 
 	if (argc > 1)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			execute_command(argv[i]);
+			execute_command(argv[i], path_list);
 		}
 	}
 	else
 	{
-		char *line;
 
 		while (1)
 		{
@@ -30,7 +31,7 @@ void cmdline_arguments(int argc, char *argv[])
 				free(line);
 				continue;
 			}
-			execute_command(line);
+			execute_command(line, path_list);
 			free(line);
 		}
 	}
