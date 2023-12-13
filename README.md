@@ -1,4 +1,4 @@
-# Simple Shell Project
+# Simple Shell Project by Chukwunonso Nwankpa and Deborah Ogwuche
 
 The simple shell project is a Simple UNIX Command Line Interpreter
 

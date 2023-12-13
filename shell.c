@@ -1,35 +1,26 @@
 #include "shell.h"
-/**
- * main - main
+
+/*
+ * Author: Deborah & Nonso
+ * Main:  main variable
  *
- * Return: 0
  */
-int main()
+
+int main(int ac, char **argv)
 {
-	char *entry;
+	char *prompt = "(simple_shell) $ ";
+	char *lineptr;
+	size_t n = 0;
 
-	while (1)
-	{
-		entry = get_input();
-	}
+/* declare void variables */
 
-	free(entry);
+	(void)ac;
+	(void)argv;
+
+	printf("%s", prompt);
+	getline(&lineptr, &n, stdin);
+	printf("%s\n", lineptr);
+
+	free(lineptr);
 	return (0);
 }
-
-/*int main()
-{
-	char *line = NULL;
-	size_t len = 0;
-	ssize_t read;
-
-	printf("$ ");
-	while ((read = _get_input(&line, &len, stdin)) != -1)
-	{
-		printf("%s\n", line);
-		printf("$ ");
-	}
-	free(line);
-	return (0);
-}*/
-
