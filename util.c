@@ -9,7 +9,8 @@
 char **string_splitter(char *string, const char *separator)
 {
 	static char *buffer;
-	char *tkn, char **tkns;
+	char *tkn;
+	char **tkns;
 	size_t i = 0;
 
 	if (string != NULL)

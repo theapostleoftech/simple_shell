@@ -9,7 +9,7 @@ pathlist *create_path()
     char *path = getenv("PATH");
     char **ptr = string_splitter(path, ":");
 
-    pathlist* list = malloc(sizeof(pathlist));
+    pathlist *list = malloc(sizeof(pathlist));
     
     list->paths = NULL;
     list->num = 0;
@@ -32,7 +32,7 @@ pathlist *create_path()
  * 
  * Return: void
  */
-void free_path(pathlist* list)
+void free_path(pathlist *list)
 {
     int p;
     for (p = 0; p < list->num; p++)
@@ -51,7 +51,7 @@ void free_path(pathlist* list)
  * Return: path
  * 
  */
-char* search_path(pathlist* list, const char* ord)
+char *search_path(pathlist *list, const char *ord)
 {
     int p;
     size_t buffer_sz = 256;
