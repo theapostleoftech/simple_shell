@@ -31,7 +31,7 @@ void sh_env(void)
 
 	while (*env != NULL)
 	{
-		printf("%s\n", *env);
+		printf("%s\n", *env);	
 		env++;
 	}
 }

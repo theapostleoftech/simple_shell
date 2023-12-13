@@ -67,7 +67,6 @@ void call_forktoexecve(char **argv, pathlist *path_list)
 	{
 		if (argv[0][0] == '/')
 		{
-			fprintf(stderr, "Executing absolute paths: %s\n", argv[0]);
 			if (execve(argv[0], argv, NULL) == -1)
 			{
 				perror(argv[0]);
@@ -75,11 +74,9 @@ void call_forktoexecve(char **argv, pathlist *path_list)
 		}
 		else
 		{
-			fprintf(stderr, "trying to execute: %s\n", argv[0]);
 			cmdpath = search_path(path_list, argv[0]);
 			if (cmdpath != NULL)
 			{
-				fprintf(stderr, "Executing cmmd from path: %s\n", cmdpath);
 				if (execve(cmdpath, argv, NULL) == -1)
 				{
 					perror(argv[0]);
