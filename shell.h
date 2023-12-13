@@ -1,3 +1,8 @@
+#ifndef SIMPLE_SHELL_H
+#define SIMPLE_SHELL_H
+
+#include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include <sys/types.h>
@@ -8,20 +13,27 @@
 #define SHELL_SIGN "$ "
 #define RD_SIZE 1024
 
-typedef struct {
-    char ** paths;
-    int num;
+/**
+ * struct pathlist - shell path
+ * @paths: paths
+ * @num: count of paths
+ *
+ * Return: path
+ */
+typedef struct pathlist
+{
+	char **paths;
+	int num;
 } pathlist;
 
 extern char **environ;
 /*char *custom_getline(void);*/
 void execute_command(char *line);
 char *my_getline(void);
-char **string_splitter(char *string, const char* separator);
+char **string_splitter(char *string, const char *separator);
 void cmdline_arguments(int argc, char *argv[]);
-
-char* search_path(pathlist* list, const char* ord);
-void free_path(pathlist* list);
+char *search_path(pathlist *list, const char *ord);
+void free_path(pathlist *list);
 pathlist *create_path();
 
 void sh_exit(char *notify);
