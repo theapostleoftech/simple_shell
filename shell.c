@@ -1,35 +1,53 @@
 #include "shell.h"
 /**
- * main - main
- *
- * Return: 0
+ * cmdline_arguments - handle cmdline arguments
+ * @arc: argument count
+ * @argv: argument vector
+ * 
+ * Return: void
  */
-int main()
+void cmdline_arguments(int argc, char *argv[])
 {
-	char *entry;
+    int i;
 
-	while (1)
-	{
-		entry = get_input();
-	}
+    if (argc > 1)
+    {
+        for (i = 1; i < argc; i++)
+        {
+            execute_command(argv[i]);
+        }
 
-	free(entry);
-	return (0);
+    }
+    else
+    {
+        char *line;
+        while(1)
+        {
+            write(1, SHELL_SIGN, strlen(SHELL_SIGN));
+            line = my_getline();
+            if (line == NULL)
+            {
+                free(line);
+                continue;
+            }
+            execute_command(line);
+            free(line);
+        }
+    }
+
 }
 
-/*int main()
+
+
+/**
+ * @brief 
+ * 
+ * @return int 
+ */
+int main(int argc, char *argv[])
 {
-	char *line = NULL;
-	size_t len = 0;
-	ssize_t read;
+    cmdline_arguments(argc, argv);
 
-	printf("$ ");
-	while ((read = _get_input(&line, &len, stdin)) != -1)
-	{
-		printf("%s\n", line);
-		printf("$ ");
-	}
-	free(line);
-	return (0);
-}*/
+    return (0);
 
+}

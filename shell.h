@@ -8,16 +8,33 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
+#include <errno.h>
 
+#define SHELL_SIGN "$ "
+#define RD_SIZE 1024
 
-#define B_SIZE 1024
-#define SHELL_PROMPT "$> "
+typedef struct {
+    char ** paths;
+    int num;
+} pathlist;
 
+extern char **environ;
+/*char *custom_getline(void);*/
+void execute_command(char *line);
+char *my_getline(void);
+char **string_splitter(char *string, const char* separator);
+void cmdline_arguments(int argc, char *argv[]);
 
-char *get_input(void);
-/*ssize_t _get_input(char **lineptr, size_t *n, FILE *stream);*/
+char* search_path(pathlist* list, const char* ord);
+void free_path(pathlist* list);
+pathlist *create_path();
 
+void sh_exit(char *notify);
+void sh_env(void);
+int sh_setenv(char *name, char *value, int overwrite);
+
+int _atoint(char *string);
+int _strcompare(const char *s1, const char *s2);
 
 
 #endif
-
