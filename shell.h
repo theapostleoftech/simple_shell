@@ -28,7 +28,9 @@ typedef struct pathlist
 
 extern char **environ;
 /*char *custom_getline(void);*/
-void execute_command(char *line);
+void execute_command(char *line, pathlist *path_list);
+void call_forktoexecve(char **argv, pathlist *path_list);
+void call_builtinstoexecve(char **argv);
 char *my_getline(void);
 char **string_splitter(char *string, const char *separator);
 void cmdline_arguments(int argc, char *argv[]);

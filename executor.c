@@ -2,73 +2,68 @@
 /**
  * execute_command - executes a command
  * @line: the command to execute
+ * @path_list: path to be executed
  *
  * Return: void
  */
-void execute_command(char *line)
+void execute_command(char *line, pathlist *path_list)
 {
-	pid_t s_pid;
-	int notify;
-	int i;
 	char **argv = string_splitter(line, " ");
 
 	if (argv == NULL || argv[0] == NULL)
 	{
-		fprintf(stderr, "Error: Unable to parse command\n");
+		fprintf(stderr, "Error: parsing command error\n");
 		free(argv);
 		return;
 	}
-	if (_strcompare(argv[0], "env") == 0)
-		sh_env();
-	if (_strcompare(argv[0], "exit") == 0)
+
+	if (_strcompare(argv[0], "env") == 0 || _strcompare(argv[0], "exit") == 0)
 	{
-		if (argv[1] != NULL)
-			sh_exit(argv[1]);
+		call_builtinstoexecve(argv);
 	}
 	else
 	{
-		sh_exit(NULL);
+		call_forktoexecve(argv, path_list);
 	}
-	printf("Command: %s\n", argv[0]);
-	if (access(argv[0], F_OK | X_OK) == 0)
-	{
-		char *message = "Command found in the current directory\n";
+	free(argv);
+}
 
-		write(STDOUT_FILENO, message, strlen(message));
-	}
-	else
-	{
-		pathlist *paths = create_path();
-		char *realpath = search_path(paths, argv[0]);
-
-		if (realpath == NULL)
-		{
-			perror("Error:");
-			free_path(paths);
-			free(argv);
-			return;
-		}
-		argv[0] = realpath;
-		free_path(paths);
-	}
-	printf("Executing: %s\n", argv[0]);
-	printf("Arguments: ");
-	for (i = 1; argv[i] != NULL; i++)
-		printf("%s ", argv[i]);
-	printf("\n");
+/**
+ * call_forktoexecve - calls up and processes
+ * @argv: argument vector
+ * @path_list: - list to path
+ *
+ * Return: void
+ */
+void call_forktoexecve(char **argv, pathlist *path_list)
+{
+	pid_t s_pid;
+	char *cmdpath;
+	int notify;
 
 	s_pid = fork();
+
 	if (s_pid == -1)
 	{
-		perror("Error:");
-		free(argv);
-		exit(1);
+		perror("Error");
+		return;
 	}
+
 	if (s_pid == 0)
 	{
-		if (execve(argv[0], argv, NULL) == -1)
-			perror(argv[0]);
-		free(argv);
+		cmdpath = search_path(path_list, argv[0]);
+		if (cmdpath != NULL)
+		{
+			if (execve(cmdpath, argv, NULL) == -1)
+			{
+				perror(argv[0]);
+			}
+			free(cmdpath);
+		}
+		else
+		{
+			fprintf(stderr, "%s: Command not found\n", argv[0]);
+		}
 		exit(1);
 	}
 	else
@@ -77,5 +72,30 @@ void execute_command(char *line)
 			waitpid(s_pid, &notify, WUNTRACED);
 		} while (!WIFEXITED(notify) && !WIFSIGNALED(notify));
 	}
-	free(argv);
 }
+
+/**
+ * call_builtinstoexecve - execute builtin commands
+ * @argv: argument vector
+ *
+ * Return: void
+ */
+void call_builtinstoexecve(char **argv)
+{
+	if (_strcompare(argv[0], "env") == 0)
+	{
+		sh_env();
+	}
+	else if (_strcompare(argv[0], "exit") == 0)
+	{
+		if (argv[1] != NULL)
+		{
+			sh_exit(argv[1]);
+		}
+		else
+		{
+			sh_exit(NULL);
+		}
+	}
+}
+
