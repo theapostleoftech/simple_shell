@@ -42,7 +42,7 @@ int shell_cd(char **cmd, __attribute__((unused))int st)
  */
 int s_env(__attribute__((unused)) char **cmd, __attribute__((unused)) int st)
 {
-	size_t i;
+	size_t t;
 	int len;
 
 	for (t = 0; environ[t] != NULL; t++)
@@ -72,7 +72,7 @@ int shell_show_echo(char **cmd, int st)
 	}
 	else if (shell_strncmp(cmd[1], "$$", 2) == 0)
 	{
-		shell_print_number(pid);
+		shell_print_number(t_pid);
 		PRINT("\n");
 	}
 	else if (shell_strncmp(cmd[1], "$PATH", 5) == 0)
