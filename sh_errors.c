@@ -13,7 +13,7 @@ void sh_display_error(char *entry, int counter, char **argv)
 
 	PRINT(argv[0]);
 	PRINT(": ");
-	er = _itoa(counter);
+	er = sh_itoa(counter);
 	PRINT(er);
 	free(er);
 	PRINT(": ");
@@ -30,7 +30,7 @@ void sh_display_error(char *entry, int counter, char **argv)
 
 void sh_prerror(char **argv, int c, char **cmd)
 {
-	char *er = _itoa(c);
+	char *er = sh_itoa(c);
 
 	PRINT(argv[0]);
 	PRINT(": ");
