@@ -11,7 +11,7 @@ void sh_help_env(void)
 }
 
 /**
- * sh_help_setenv - Displays information on the shell by builtin command 'setenv'
+ * sh_help_setenv - Displays information on the shell
  */
 void sh_help_setenv(void)
 {

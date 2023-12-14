@@ -81,11 +81,11 @@ void sh_help_exit(void)
 }
 
 /**
- * sh_help_sh_help - Displays information on the shell by builtin command 'sh_help'
+ * sh_help_sh_help - Displays information on the shell by 'sh_help'
  */
 void sh_help_sh_help(void)
 {
-	char *msg = "sh_help: sh_help\n\tSee all possible Shellby builtin commands.\n";
+	char *msg = "sh_help: sh_help\n\tSee all builtin commands.\n";
 
 	write(STDOUT_FILENO, msg, sh_strlen(msg));
 	msg = "\n      sh_help [BUILTIN NAME]\n\tSee specific information on each ";

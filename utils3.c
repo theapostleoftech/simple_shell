@@ -51,7 +51,7 @@ int sh_isalpha(int c)
 }
 
 /**
- * _itoa - funciton that convert integer to character
+ * sh_itoa - funciton that convert integer to character
  * @n: integer to convert
  * Return: character pointer
  */
