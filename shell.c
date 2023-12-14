@@ -67,8 +67,8 @@ void execute_instruction(char *instruction)
     else 
     {
         do {
-            w_pid = waitpid(pid, &notify, WUNTRACED);
-        } while (!WIFEXITED(status) && !WIFSIGNALED(notify));
+            w_pid = waitpid(s_pid, &notify, WUNTRACED);
+        } while (!WIFEXITED(notify) && !WIFSIGNALED(notify));
     }
 }
 
