@@ -39,7 +39,7 @@ int main(__attribute__((unused)) int argc, char **argv)
 			if (shell_strcmp(cmd[0], "exit") == 0)
 			{
 				free(commands);
-				shell_exit_builtin_cmd(cmd, entry, argv, count, stat);
+				shell_exit_cmd(cmd, entry, argv, count, stat);
 			}
 			else if (shell_check_builtin_cmd(cmd) == 0)
 			{
