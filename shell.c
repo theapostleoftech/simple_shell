@@ -53,7 +53,7 @@ void execute_instruction(char *instruction)
     if (s_pid == 0) 
     {
         
-        if (execve(instruction, NULL, NULL) == -1) 
+        if (execve(instruction, char *[]{instruction, NULL}, NULL) == -1) 
         {
             perror("execve");
             exit(EXIT_FAILURE);
