@@ -1,6 +1,7 @@
 #include "shell.h"
 
 /**
+ * Author: Chukwunonso & Deborah
  * sh_strlen - returns the length of a string
  * @string : string parameter
  *
