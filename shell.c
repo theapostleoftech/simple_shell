@@ -59,7 +59,7 @@ void execute_instruction(char *instruction)
             exit(EXIT_FAILURE);
         }
     } 
-    else if (pid < 0) 
+    else if (s_pid < 0) 
     {
         perror("fork");
         exit(EXIT_FAILURE);
@@ -67,7 +67,7 @@ void execute_instruction(char *instruction)
     else 
     {
         do {
-            w_pid = waitpid(pid, &status, WUNTRACED);
+            w_pid = waitpid(pid, &notify, WUNTRACED);
         } while (!WIFEXITED(status) && !WIFSIGNALED(notify));
     }
 }
