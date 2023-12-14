@@ -1,9 +1,8 @@
 #include "shell.h"
 
 /**
- * shell_print_number - Prints unsigned integers
- * @n: Unsigned integer to be printed
- * 
+ * shell_print_number - Prints unsigned integer
+ * @n: Unsigned integer to be print
  * Return: unsigned integer
  */
 void shell_print_number(unsigned int n)
@@ -19,7 +18,6 @@ void shell_print_number(unsigned int n)
 /**
  * shell_print_number_int - Prints integers
  * @n: Integer to be printed
- * 
  * Return: integer
  */
 void shell_print_number_int(int n)
@@ -40,7 +38,6 @@ void shell_print_number_int(int n)
 /**
  * shell_print_echo - Executes built-in echo function
  * @cmd: Parsed Command
- * 
  * Return: 0 Upon Success -1 Upon Failure
  */
 int shell_print_echo(char **cmd)

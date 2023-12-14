@@ -2,8 +2,7 @@
 
 /**
  * shell_search_path -  Search In $PATH for executable command
- * @cmd: Parsed input
- * 
+ * @cmd: Parsed inpu
  * Return: 0 on success or  1 on failure  0
  */
 int shell_search_path(char **cmd)
@@ -35,7 +34,6 @@ int shell_search_path(char **cmd)
  * shell_create_path - shell_create_path command
  * @token: Executable command
  * @value: Directory conatining Command
- * 
  * Return: Parsed full path of command or NULL if failed
  */
 char *shell_create_path(char *token, char *value)
@@ -62,8 +60,7 @@ char *shell_create_path(char *token, char *value)
 
 /**
  * shell_getenv - Gets the value of environment variable
- * @name: Environment variable name
- * 
+ * @name: Environment variable nam
  * Return: value of the environment variable or NULL
  */
 char *shell_getenv(char *name)
@@ -98,3 +95,4 @@ char *shell_getenv(char *name)
 	}
 	return (NULL);
 }
+

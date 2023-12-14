@@ -2,8 +2,7 @@
 
 /**
  * shell_splitter - splits command recieved from stdin by ;
- * @input: String gathered from stdin
- * 
+ * @input: String gathered from std
  * Return: Parsed strings to be used as commands
  */
 char **shell_splitter(char *input)
@@ -34,3 +33,4 @@ char **shell_splitter(char *input)
 
 	return (commands);
 }
+

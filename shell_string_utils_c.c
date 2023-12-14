@@ -3,7 +3,7 @@
 /**
  * shell_strcmp - compares two string
  * @s1: first string
- * @s2: second string 
+ * @s2: second strin
  * Return: 0 if identical else how much diffrent
  */
 int shell_strcmp(char *s1, char *s2)
