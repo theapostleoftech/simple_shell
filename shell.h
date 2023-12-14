@@ -128,10 +128,10 @@ int shell_check_builtin_cmd(char **cmd);
 int shell_execute_builtin(char **cmd, int st);
 void shell_exit_builtin_cmd(char **cmd, char *input, char **argv, int c, int stat);
 int shell_cd(char **cmd, __attribute__((unused))int st);
-int shell_show_env(__attribute__((unused)) char **cmd,
+int s_env(__attribute__((unused)) char **cmd,
 	    __attribute__((unused)) int st);
 int shell_show_echo(char **cmd, int st);
-int shell_show_history(__attribute__((unused))char **c,
+int shell_his(__attribute__((unused))char **c,
 		__attribute__((unused)) int st);
 
 #endif /*SHELL_H*/
