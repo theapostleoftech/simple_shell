@@ -47,12 +47,13 @@ void execute_instruction(char *instruction)
 {
     pid_t s_pid;
     int notify;
+    char *argv[] = {instruction, NULL};
 
     s_pid = fork();
 
     if (s_pid == 0) 
     {
-        char *argv[] = {instruction, NULL};
+       
         if (execve(instruction, argv, NULL) == -1) 
         {
             perror("execve");
