@@ -94,7 +94,7 @@ void shell_array_rev(char *arr, int len)
 	int t;
 	char temp;
 
-	for (t = 0;  < (len / 2); t++)
+	for (t = 0;  t < (len / 2); t++)
 	{
 		temp = arr[t];
 		arr[t] = arr[(len - 1) - t];
