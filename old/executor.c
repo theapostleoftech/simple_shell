@@ -1,5 +1,6 @@
 #include "shell.h"
 /**
+ * Authors: chukwunonso & Deborah
  * execute_command - executes a command
  * @line: the command to execute
  * @path_list: path to be executed
