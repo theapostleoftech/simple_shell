@@ -50,7 +50,7 @@ void sh_prerror(char **argv, int c, char **cmd)
  */
 void sh_error_file(char **argv, int c)
 {
-	char *er = _itoa(c);
+	char *er = sh_itoa(c);
 
 	PRINT(argv[0]);
 	PRINT(": ");
