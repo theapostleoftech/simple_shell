@@ -18,7 +18,7 @@ char *sh_getline()
 	for (i = 0; c != EOF && c != '\n'; i++)
 	{
 		fflush(stdin);
-		rdline = read(0, &c, 1);
+		rdline = read(STDIN_FILENO, &c, 1);
 		if (rdline == 0)
 		{
 			free(buffer);
