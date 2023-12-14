@@ -42,8 +42,7 @@ void shell_help_unsetenv(void)
 /**
  * shell_display_help - display help for builtin commands
  * @cmd: parsed command
- * @st: Status of last command executed
- * 
+ * @st: Status of last command execute
  * Return: 0 Success
  */
 int shell_display_help(char **cmd, __attribute__((unused))int st)

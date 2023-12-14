@@ -3,7 +3,7 @@
 /**
  * shell_strcpy - copies a string
  * @dest: where to copy to
- * @src: where to copy from 
+ * @src: where to copy fro
  * Return: destination
  */
 char *shell_strcpy(char *dest, char *src)

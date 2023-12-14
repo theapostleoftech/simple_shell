@@ -4,7 +4,7 @@
  * shell_print_error - Displays error message
  * @input: Input recieved from user
  * @counter: Count of shell loop
- * @argv: Arguments 
+ * @argv: Argumen
  * Return: nothing
  */
 void shell_print_error(char *input, int counter, char **argv)

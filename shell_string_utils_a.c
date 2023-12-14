@@ -2,7 +2,7 @@
 
 /**
  * shell_putchar - writes the character to stdout
- * @c: character to print 
+ * @c: character to prin
  * Return: character to standard output
  */
 int shell_putchar(char c)

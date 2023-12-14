@@ -3,7 +3,7 @@
 /**
  * shell_read_file - Reads commands from the argument File
  * @file: File containing commands
- * @argv: Arguments passed 
+ * @argv: Arguments passe
  * Return: -1 or 0
  */
 void shell_read_file(char *file, char **argv)

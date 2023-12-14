@@ -2,7 +2,7 @@
 
 /**
  * shell_parse_cmd - Parses the command recieved from stdin
- * @input: String gathered from stdin 
+ * @input: String gathered from stdin
  * Return: Parsed strings to be used as args
  */
 char **shell_parse_cmd(char *input)

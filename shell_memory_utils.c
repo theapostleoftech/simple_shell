@@ -4,7 +4,7 @@
  * shell_realloc - reallocates a memory block
  * @ptr: pointer
  * @old_size: previous Size Of the ptr
- * @new_size: new size of the ptr 
+ * @new_size: new size of the ptr
  * Return: ptr to reallocated memory
  */
 void *shell_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
