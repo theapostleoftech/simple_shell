@@ -2,7 +2,7 @@
 #define SHELL_H
 
 #define PRINT(c) (write(2, c, sh_strlen(c)))
-#define BUFFER_SZ 1024
+#define BUFSIZE 1024
 #define SEPARATOR " \t\r\n\a"
 
 /*** STANDARD LIBRARIES ***/
