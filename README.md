@@ -240,4 +240,4 @@ Simple shell 1.0 +
 ### Authors:
 
 * [Chukwunonso Nwankpa](https://github.com/theapostleoftech)
-* [Deborah Ogwuche Gebremichael](https://github.com/blessdeb)
+* [Deborah Ogwuche](https://github.com/Blessdeb)
