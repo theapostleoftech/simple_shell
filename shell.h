@@ -126,7 +126,7 @@ int shell_display_help(char **cmd, __attribute__((unused))int st);
 
 int shell_check_builtin_cmd(char **cmd);
 int shell_execute_builtin(char **cmd, int st);
-void shell_exit_builtin_cmd(char **cmd, char *input, char **argv, int c, int stat);
+void shell_exit_cmd(char **cmd, char *input, char **argv, int c, int stat);
 int shell_cd(char **cmd, __attribute__((unused))int st);
 int s_env(__attribute__((unused)) char **cmd,
 	    __attribute__((unused)) int st);
