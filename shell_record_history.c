@@ -2,8 +2,7 @@
 
 /**
  * history - write file with user inputs
- * @input: user input
- * 
+ * @input: user input 
  * Return: 0 on success -1 if failed
  */
 int history(char *input)
@@ -27,3 +26,4 @@ int history(char *input)
 	}
 	return (1);
 }
+

@@ -3,8 +3,7 @@
 /**
  * shell_cd - Changes directory
  * @cmd: Parsed command
- * @st: Status of last command executed
- * 
+ * @st: Status of last command executed 
  * Return: 0 on success 1
  */
 int shell_cd(char **cmd, __attribute__((unused))int st)
@@ -38,8 +37,7 @@ int shell_cd(char **cmd, __attribute__((unused))int st)
 /**
  * shell_show_env - Display enviroment variable
  * @cmd: parsed command
- * @st: status of last command executed
- * 
+ * @st: status of last command execute
  * Return: Always 0
  */
 int shell_show_env(__attribute__((unused)) char **cmd, __attribute__((unused)) int st)
@@ -60,7 +58,6 @@ int shell_show_env(__attribute__((unused)) char **cmd, __attribute__((unused)) i
  * shell_show_echo - execute echo cases
  * @st: statue of last command executed
  * @cmd: parsed command
- * 
  * Return: Always 1 or execute normal echo
  */
 int shell_show_echo(char **cmd, int st)
@@ -95,7 +92,6 @@ int shell_show_echo(char **cmd, int st)
  * shell_show_history - display history of user input
  * @c: parsed command
  * @st: status of last command executed
- * 
  * Return: 0 success or -1 if fail
  */
 int shell_show_history(__attribute__((unused))char **c, __attribute__((unused))int st)
@@ -126,3 +122,4 @@ int shell_show_history(__attribute__((unused))char **c, __attribute__((unused))i
 	fclose(fp);
 	return (0);
 }
+

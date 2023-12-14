@@ -3,8 +3,7 @@
 /**
  * shell_strcpy - copies a string
  * @dest: where to copy to
- * @src: where to copy from
- * 
+ * @src: where to copy from 
  * Return: destination
  */
 char *shell_strcpy(char *dest, char *src)
@@ -49,7 +48,6 @@ char *shell_strcat(char *dest, char *src)
  * shell_strchr - locates character in a string
  * @s: string to be searched
  * @c: character to be located
- * 
  * Return: pointer to character
  */
 char *shell_strchr(char *s, char c)
@@ -68,7 +66,6 @@ char *shell_strchr(char *s, char c)
  * @s1: first string
  * @s2: second string
  * @n: amount of characters to compare
- * 
  * Return: 1 if the strings don't match else 0
  */
 int shell_strncmp(const char *s1, const char *s2, size_t n)
@@ -91,7 +88,6 @@ int shell_strncmp(const char *s1, const char *s2, size_t n)
 /**
  * shell_strdup - duplicate a string
  * @str: string
- * 
  * Return: duplicate string or Null if failed
  */
 char *shell_strdup(char *str)
@@ -111,3 +107,4 @@ char *shell_strdup(char *str)
 	}
 	return (str2);
 }
+

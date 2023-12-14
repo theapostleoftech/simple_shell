@@ -2,8 +2,7 @@
 
 /**
  * shell_check_builtin_cmd - Checks if command is in built-in
- * @cmd: Parsed command to be check
- * 
+ * @cmd: Parsed command to be check 
  * Return: 0 Succes -1 Fail
  */
 int shell_check_builtin_cmd(char **cmd)
@@ -35,7 +34,6 @@ int shell_check_builtin_cmd(char **cmd)
  * shell_execute_builtin - Handles predefined built in commands
  * @cmd: Array of parsed command strings
  * @st: Status of last execution
- * 
  * Return: -1 Failure 0 Success
  */
 int shell_execute_builtin(char **cmd, int st)
@@ -105,3 +103,4 @@ void shell_exit_builtin_cmd(char **cmd, char *input, char **argv, int c, int sta
 		}
 	}
 }
+

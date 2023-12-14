@@ -23,7 +23,7 @@ void shell_help_all(void)
 }
 
 /**
- * shell_help_alias - Displays information on the shell by builtin command 'alias'
+ * shell_help_alias -info on the shell by builtin command 'alias'
  */
 void shell_help_alias(void)
 {
@@ -65,7 +65,7 @@ void shell_help_cd(void)
 }
 
 /**
- * shell_help_exit - Displays information on the shell by builtin command 'exit'
+ * shell_help_exit - info  on the shell by builtin command 'exit'
  */
 void shell_help_exit(void)
 {
@@ -81,7 +81,7 @@ void shell_help_exit(void)
 }
 
 /**
- * shell_help_help - Displays information on the shell by builtin command 'help'
+ * shell_help_help - info  on the shell by builtin command 'help'
  */
 void shell_help_help(void)
 {
@@ -93,3 +93,4 @@ void shell_help_help(void)
 	msg = "builtin command.\n";
 	write(STDOUT_FILENO, msg, shell_strlen(msg));
 }
+

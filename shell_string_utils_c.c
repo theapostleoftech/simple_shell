@@ -3,8 +3,7 @@
 /**
  * shell_strcmp - compares two string
  * @s1: first string
- * @s2: second string
- * 
+ * @s2: second string 
  * Return: 0 if identical else how much diffrent
  */
 int shell_strcmp(char *s1, char *s2)
@@ -22,7 +21,7 @@ int shell_strcmp(char *s1, char *s2)
 
 	for (t = 0; s1[t]; t++)
 	{
-		if (s1[t] != s2[i])
+		if (s1[t] != s2[t])
 		{
 			compared = s1[t] - s2[t];
 			break;
@@ -37,7 +36,6 @@ int shell_strcmp(char *s1, char *s2)
 /**
  * shell_isalpha - check if c is alphabet
  * @c: character to check
- * 
  * Return: 1 if true 0 if false
  */
 int shell_isalpha(int c)
@@ -55,7 +53,6 @@ int shell_isalpha(int c)
 /**
  * shell_itoa - convert integer to character
  * @n: integer to convert
- * 
  * Return: character pointer
  */
 char *shell_itoa(unsigned int n)
@@ -108,7 +105,6 @@ void shell_array_rev(char *arr, int len)
 /**
  * shell_intlen - determine length of integer
  * @num: given integer
- * 
  * Return: length of integer
  */
 int shell_intlen(int num)
@@ -122,3 +118,4 @@ int shell_intlen(int num)
 	}
 	return (len);
 }
+

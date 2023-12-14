@@ -2,8 +2,7 @@
 
 /**
  * shell_putchar - writes the character to stdout
- * @c: character to print
- * 
+ * @c: character to print 
  * Return: character to standard output
  */
 int shell_putchar(char c)
@@ -14,7 +13,6 @@ int shell_putchar(char c)
 /**
  * shell_puts - prints a string
  * @str: pointer to string
- * 
  * Return: void
  */
 void shell_puts(char *str)
@@ -33,7 +31,6 @@ void shell_puts(char *str)
  * @dest: where to copy to
  * @src: where to copy from
  * @n: number of characters to copy
- * 
  * Return: copied strings
  */
 char *shell_strncpy(char *dest, char *src, int n)
@@ -56,7 +53,6 @@ char *shell_strncpy(char *dest, char *src, int n)
 /**
  * shell_strlen - count the length of a string
  * @s: string input
- * 
  * Return: length of string
  */
 int shell_strlen(char *s)
@@ -73,7 +69,6 @@ int shell_strlen(char *s)
 /**
  * shell_atoi - convert string to a integer
  * @s: string to convert
- * 
  * Return: converted integer
  */
 int shell_atoi(char *s)
@@ -100,3 +95,4 @@ int shell_atoi(char *s)
 	n *= u;
 	return (n);
 }
+

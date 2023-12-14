@@ -2,8 +2,7 @@
 
 /**
  * shell_parse_cmd - Parses the command recieved from stdin
- * @input: String gathered from stdin
- * 
+ * @input: String gathered from stdin 
  * Return: Parsed strings to be used as args
  */
 char **shell_parse_cmd(char *input)
@@ -42,7 +41,6 @@ char **shell_parse_cmd(char *input)
  * @input: Input recieved from user
  * @c:Shell Excution Time Case of Command Not Found
  * @argv: Arguments
- * 
  * Return: 1 or 0
  */
 int shell_execute_cmd(char **cmd, char *input, int c, char **argv)
@@ -97,3 +95,4 @@ void signal_to_handle(int sig)
 		PRINT("\n$ ");
 	}
 }
+

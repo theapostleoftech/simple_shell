@@ -3,8 +3,7 @@
 /**
  * shell_find_delimiter - checks if a character matchs any character
  * @c: character to check
- * @str: string of delimiters
- * 
+ * @str: string of delimiters 
  * Return: 1 on success, 0 on failure
  */
 unsigned int shell_find_delimiter(char c, const char *str)
@@ -23,7 +22,6 @@ unsigned int shell_find_delimiter(char c, const char *str)
  * shell_strtok - extracts tokens of a string
  * @str: string
  * @delim: delimiter
- * 
  * Return: pointer to the next token or NULL
  */
 char *shell_strtok(char *str, const char *delim)
@@ -65,3 +63,4 @@ char *shell_strtok(char *str, const char *delim)
 	}
 	return (tokens);
 }
+

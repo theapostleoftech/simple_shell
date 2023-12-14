@@ -4,11 +4,9 @@
  * shell_print_error - Displays error message
  * @input: Input recieved from user
  * @counter: Count of shell loop
- * @argv: Arguments
- * 
+ * @argv: Arguments 
  * Return: nothing
  */
-
 void shell_print_error(char *input, int counter, char **argv)
 {
 	char *er;
@@ -28,10 +26,8 @@ void shell_print_error(char *input, int counter, char **argv)
  * @argv: Arguments
  * @c: Error Count
  * @cmd: Array of parsed command strings
- * 
  * Return: nothing
  */
-
 void shell_prerror(char **argv, int c, char **cmd)
 {
 	char *er = shell_itoa(c);
@@ -51,7 +47,6 @@ void shell_prerror(char **argv, int c, char **cmd)
  * shell_error_file - Prints custom Error
  * @argv: Arguments
  * @c: Error Count
- * 
  * Return: nothing
  */
 void shell_error_file(char **argv, int c)
@@ -66,3 +61,4 @@ void shell_error_file(char **argv, int c)
 	PRINT("\n");
 	free(er);
 }
+

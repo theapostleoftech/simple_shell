@@ -2,7 +2,6 @@
 
 /**
  * shell_prompt - prints '$' to stdout
- * 
  * Return: void
  */
 void shell_prompt(void)
@@ -14,7 +13,6 @@ void shell_prompt(void)
  * main - Entry point to program
  * @argc: Argument count
  * @argv: Argument vector
- * 
  * Return: Returns condition
  */
 int main(__attribute__((unused)) int argc, char **argv)
@@ -59,3 +57,4 @@ int main(__attribute__((unused)) int argc, char **argv)
 	}
 	return (stat);
 }
+

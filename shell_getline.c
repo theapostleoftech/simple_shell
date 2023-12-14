@@ -2,7 +2,6 @@
 
 /**
  * shell_getline - read input from stdio
- * 
  * Return: the input on a buffer
  */
 char *shell_getline()
@@ -48,7 +47,6 @@ char *shell_getline()
 /**
  * shell_newline - Handles newline character input
  * @string: String to be handled
- * 
  * Return: Empty string
  */
 char *shell_newline(char *string)
@@ -60,7 +58,6 @@ char *shell_newline(char *string)
 /**
  * shell_whitespace - remove preceeding whitespaces
  * @str: entry to be modified
- * 
  * Return: Returns the modified string
  */
 char *shell_whitespace(char *str)
@@ -93,7 +90,6 @@ char *shell_whitespace(char *str)
 /**
  * shell_remove_hash - removes everything after '#'
  * @buff: input buffer
- * 
  * Return: nothing
  */
 void shell_remove_hash(char *buff)
@@ -108,3 +104,4 @@ void shell_remove_hash(char *buff)
 		}
 	}
 }
+

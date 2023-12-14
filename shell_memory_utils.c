@@ -4,8 +4,7 @@
  * shell_realloc - reallocates a memory block
  * @ptr: pointer
  * @old_size: previous Size Of the ptr
- * @new_size: new size of the ptr
- * 
+ * @new_size: new size of the ptr 
  * Return: ptr to reallocated memory
  */
 void *shell_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
@@ -42,7 +41,6 @@ void *shell_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
  * shell_free_mem - free memory allocated
  * @cmd: array ptr
  * @line: char ptr
- * 
  * Return: void
  */
 void shell_free_mem(char **cmd, char *line)
@@ -58,7 +56,6 @@ void shell_free_mem(char **cmd, char *line)
  * @dest: destination ptr
  * @src: source ptr
  * @n: size to be copied
- * 
  * Return: ptr to destination
  */
 char *shell_memcpy(char *dest, char *src, unsigned int n)
@@ -77,7 +74,6 @@ char *shell_memcpy(char *dest, char *src, unsigned int n)
  * @a: void pointer
  * @el: int
  * @len: length of int
- * 
  * Return: void ptr
  */
 void *shell_fill_an_array(void *a, int el, unsigned int len)
@@ -97,7 +93,6 @@ void *shell_fill_an_array(void *a, int el, unsigned int len)
 /**
  * shell_calloc - allocates memory for an array
  * @size: size
- * 
  * Return: void pointer
  */
 void *shell_calloc(unsigned int size)
@@ -116,3 +111,4 @@ void *shell_calloc(unsigned int size)
 	}
 	return (c);
 }
+
