@@ -45,7 +45,7 @@ char *take_instruction(void)
 */
 void execute_instruction(char *instruction) 
 {
-    pid_t s_pid, w_pid;
+    pid_t s_pid;
     int notify;
 
     s_pid = fork();
@@ -67,7 +67,7 @@ void execute_instruction(char *instruction)
     else 
     {
         do {
-            w_pid = waitpid(s_pid, &notify, WUNTRACED);
+            waitpid(s_pid, &notify, WUNTRACED);
         } while (!WIFEXITED(notify) && !WIFSIGNALED(notify));
     }
 }
