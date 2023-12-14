@@ -53,8 +53,8 @@ void execute_instruction(char *instruction)
     if (s_pid == 0) 
     {
         char *argv[2];
-        argv[0] = command;
-        argv1] = NULL;
+        argv[0] = instruction;
+        argv[1] = NULL;
        
         if (execve(instruction, argv, NULL) == -1) 
         {
