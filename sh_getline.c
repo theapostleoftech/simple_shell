@@ -1,8 +1,7 @@
 #include "shell.h"
 
 /**
- * sh_getline - read entry from standardlineline entry by user
- * 
+ * sh_getline - read entry from user
  * Return: the entry on a buffer
  */
 char *sh_getline()
@@ -57,7 +56,7 @@ char *sh_enter_newline(char *string)
 }
 
 /**
- * sh_rmv_whitespace - Modifies the entry string to remove preceeding whitesh_rmv_whitespaces
+ * sh_rmv_whitespace -  remove preceeding whitesh_rmv_whitespaces
  * @str: Input to be modifies
  * Return: Returns the modified string
  */
