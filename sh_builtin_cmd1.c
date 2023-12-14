@@ -111,7 +111,7 @@ int sh_hist_dis(__attribute__((unused))char **c, __attribute__((unused))int st)
 	while ((getline(&line, &len, fp)) != -1)
 	{
 		counter++;
-		er = _itoa(counter);
+		er = sh_itoa(counter);
 		PRINT(er);
 		free(er);
 		PRINT(" ");
