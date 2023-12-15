@@ -23,11 +23,11 @@ char **shell_splitter(char *input)
 		perror("hsh");
 		return (NULL);
 	}
-	command = shell_strtok(input, ";&");
+	command = shell_strtok(input, ";");
 	for (t = 0; command; t++)
 	{
 		commands[t] = command;
-		command = shell_strtok(NULL, ";&");
+		command = shell_strtok(NULL, ";");
 	}
 	commands[t] = NULL;
 
