@@ -51,7 +51,7 @@ int shell_execute_cmd(char **cmd, char *input, int c, char **argv)
 	if (*cmd == NULL)
 		return (EXIT_FAILURE);
 
-	if (access(*cmd, R_OK) != 0
+	if (access(*cmd, R_OK) != 0)
 	{
 		shell_print_error(*cmd, c, argv);
 		shell_free_mem(cmd, input);
