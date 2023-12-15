@@ -50,7 +50,7 @@ int shell_execute_cmd(char **cmd, char *input, int c, char **argv)
 
 	if (*cmd == NULL)
 		return (EXIT_FAILURE);
-	
+
 	s_pid = fork();
 	if (s_pid == -1)
 	{
@@ -61,14 +61,14 @@ int shell_execute_cmd(char **cmd, char *input, int c, char **argv)
 	{
 		if (shell_strncmp(*cmd, "./", 2) != 0 && shell_strncmp(*cmd, "/", 1) != 0)
 			shell_search_path(cmd);
-		
+
 		if (access(cmd[0], R_OK) != 0)
 		{
 			shell_print_error(cmd[0], c, argv);
 			shell_free_mem(cmd, input);
 			exit(127);
 		}
-		
+
 		if (execve(*cmd, cmd, environ) == -1)
 			return (2);
 		else
